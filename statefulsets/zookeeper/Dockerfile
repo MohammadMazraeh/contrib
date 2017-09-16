@@ -57,5 +57,6 @@ RUN set -x \
 RUN chmod 777 /opt/zookeeper/bin/zkGenConfig.sh
 RUN chmod 777 /opt/zookeeper/bin/zkOk.sh
 RUN chmod 777 /opt/zookeeper/bin/zkMetrics.sh
-RUN chmod 777 /opt/zookeeper/conf/zoo.cfg
+RUN touch /opt/zookeeper/conf/zoo.cfg && \
+    chmod 777 /opt/zookeeper/conf/zoo.cfg
 #USER $ZK_USER
