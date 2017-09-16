@@ -128,9 +128,9 @@ function create_data_dirs() {
 }
 
 function create_log_props () {
-	rm -f $LOGGER_PROPS_FILE
+	# rm -f $LOGGER_PROPS_FILE
     echo "Creating ZooKeeper log4j configuration"
-	echo "zookeeper.root.logger=CONSOLE" >> $LOGGER_PROPS_FILE
+	echo "zookeeper.root.logger=CONSOLE" > $LOGGER_PROPS_FILE
 	echo "zookeeper.console.threshold="$ZK_LOG_LEVEL >> $LOGGER_PROPS_FILE
 	echo "log4j.rootLogger=\${zookeeper.root.logger}" >> $LOGGER_PROPS_FILE
 	echo "log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender" >> $LOGGER_PROPS_FILE

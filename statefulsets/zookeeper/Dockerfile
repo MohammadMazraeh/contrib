@@ -59,4 +59,6 @@ RUN chmod 777 /opt/zookeeper/bin/zkOk.sh
 RUN chmod 777 /opt/zookeeper/bin/zkMetrics.sh
 RUN touch /opt/zookeeper/conf/zoo.cfg && \
     chmod 777 /opt/zookeeper/conf/zoo.cfg
+RUN touch /opt/zookeeper/conf/log4j.properties && \
+    chmod 777 /opt/zookeeper/conf/log4j.properties
 #USER $ZK_USER
