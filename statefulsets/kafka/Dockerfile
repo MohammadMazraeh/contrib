@@ -30,3 +30,11 @@ RUN set -x \
     && chown -R "$KAFKA_USER:$KAFKA_USER"  /opt/$KAFKA_DIST \
     && chown -R "$KAFKA_USER:$KAFKA_USER"  $KAFKA_DATA_DIR
   
+
+RUN touch /opt/zookeeper/conf/log4j.properties && \
+    chmod 777 /opt/zookeeper/conf/log4j.properties
+
+RUN mkdir /opt/kafka/logs && \
+    chown -R "$KAFKA_USER:$KAFKA_USER" /opt/kafka/logs && \
+    chmod -R 777 /opt/kafka/logs
+USER $KAFKA_USER
