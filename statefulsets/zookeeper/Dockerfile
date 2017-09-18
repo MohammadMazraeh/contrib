@@ -62,10 +62,10 @@ RUN touch /opt/zookeeper/conf/zoo.cfg && \
 RUN touch /opt/zookeeper/conf/log4j.properties && \
     chmod 777 /opt/zookeeper/conf/log4j.properties
 
-RUN touch /var/lib/zookeeper/data/myid &&\
-    touch /opt/zookeeper/conf/java.env
+RUN touch /var/lib/zookeeper/data/myid
+RUN touch /opt/zookeeper/conf/java.env
 
-RUN chmod 777 /var/lib/zookeeper/data/myid &&
-    chmod 777 /opt/zookeeper/conf/java.env
+RUN chmod 777 /var/lib/zookeeper/data/myid
+RUN chmod 777 /opt/zookeeper/conf/java.env
 
 USER $ZK_USER
